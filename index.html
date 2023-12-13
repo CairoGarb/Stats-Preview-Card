@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  
+  <title>Frontend Mentor | Stats preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: white;
+      Font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      font-family: 'Lexend Deca', sans-serif; 
+    }
+
+    body {
+      background-color: hsl(233, 47%, 7%);
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      background-color: hsl(244, 38%, 16%);
+      border-radius: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 470px;
+    }
+
+/* Image */
+    .image {
+      border-radius: 0 10px 10px 0;
+      background-color: hsl(277, 64%, 61%);
+      width: 610px;
+      height: 470px;
+    }
+
+    .image img {
+      border-radius: 0 10px 10px 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      mix-blend-mode: multiply;
+    }
+
+/* Image */
+
+/* Main Content */
+    .content {
+      padding: 60px;
+      width: 490px;
+    }
+
+    .main-text h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: hsl(0, 0%, 100%);
+    }
+
+    .main-text h1 .bold {
+      color: hsl(277, 64%, 61%);
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    .main-text p {
+      color: hsla(0, 0%, 100%, 0.75);
+      margin-bottom: 65px;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: 'Inter', sans-serif; 
+      line-height: 27px;
+      width: 400px;
+       
+    }
+
+    .stats-text {
+      max-width: 380px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .stats-text h2 {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .stats-text p {
+      color: hsla(0, 0%, 100%, 0.6);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding-top: 10px;
+      letter-spacing: 1px;
+    }
+/* Main Content */
+
+/* Footer */
+    .attribution { font-size: 11px; text-align: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin-top: 275px;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+/* Footer */
+
+/* Responsiveness */
+@media screen and (max-width: 1200px) {
+
+  .container {
+    height: 400px;
+  }
+
+  .content {
+    padding: 40px;
+    width: 440px;
+  }
+
+  .main-text h1, .main-text h1 .bold {
+    font-size: 36px;
+  }
+
+  .main-text p {
+    margin-bottom: 50px;
+  }
+
+  .image {
+    width: 500px;
+    height: 400px;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  
+  .container {
+    height: 350px;
+  }
+
+  .content {
+    padding: 40px;
+    width: 410px;
+  }
+
+  .main-text h1, .main-text h1 .bold {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .main-text p {
+    margin-bottom: 25px;
+  }
+
+  .image {
+    width: 450px;
+    height: 350px;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+    
+  .container {
+    height: 300px;
+  }
+
+  .content {
+    padding: 30px;
+    width: 360px;
+  }
+
+  .main-text h1, .main-text h1 .bold {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .main-text p {
+    font-size: 14px;
+    max-width: 360px;
+    margin-bottom: 20px;
+  }
+
+  .stats-text {
+    max-width: 310px;
+  }
+
+  .stats-text h2 {
+    font-size: 20px;
+  }
+
+  .stats-text p {
+    font-size: 10px;
+  }
+
+  .image {
+    width: 400px;
+    height: 300px;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+    
+    .container {
+      height: 250px;
+    }
+  
+    .content {
+      padding: 20px;
+      width: 310px;
+    }
+  
+    .main-text h1, .main-text h1 .bold {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  
+    .main-text p {
+      font-size: 12px;
+      max-width: 310px;
+      margin-bottom: 10px;
+    }
+  
+    .stats-text {
+      max-width: 260px;
+    }
+  
+    .stats-text h2 {
+      font-size: 16px;
+    }
+  
+    .stats-text p {
+      font-size: 8px;
+    }
+  
+    .image {
+      width: 350px;
+      height: 250px;
+    }
+  
+    .image img {
+      width: 100%;
+      height: 100%;
+    }
+  
+  }
+
+  @media screen and (max-width: 650px) {
+    
+    .container {
+      margin-top: 50px;
+      height: 690px;
+      width: 290px;
+      display: block;
+    }
+  
+    .content {
+      position: absolute;
+      top: 30%;
+      padding: 40px;
+      width: 210px;
+      text-align: center;
+    }
+  
+    .main-text h1, .main-text h1 .bold {
+      font-size: 22px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    .main-text p {
+      font-size: 12px;
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+  
+    .stats-text {
+      display: block;
+      max-width: 100%;
+    }
+    .stats-text h2 {
+      font-size: 18px;
+    }
+  
+    .stats-text p {
+      font-size: 10px;
+      padding-bottom: 20px;
+    }
+  
+    .image {
+      width: 290px;
+      height: 210px;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: 0;
+    }
+  
+    .image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .attribution {
+      margin-top: 430px;
+      font-size: 10px;
+    }
+
+    .attribution a {
+      font-size: 10px;
+    }
+  
+  }
+
+  @media screen and (max-width: 350px) {
+    
+    .container {
+      height: 670px;
+      width: 270px;
+      display: block;
+    }
+  
+    .content {
+      position: absolute;
+      top: 27%;
+      padding: 40px;
+      width: 190px;
+      text-align: center;
+    }
+  
+    .main-text h1, .main-text h1 .bold {
+      font-size: 20px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    .main-text p {
+      font-size: 11px;
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+  
+    .stats-text {
+      display: block;
+      max-width: 100%;
+    }
+    .stats-text h2 {
+      font-size: 18px;
+    }
+  
+    .stats-text p {
+      font-size: 10px;
+      padding-bottom: 20px;
+    }
+  
+    .image {
+      width: 270px;
+      height: 200px;
+      border-radius: 10px 10px 0 0;
+      position: absolute;
+      top: 0;
+    }
+  
+    .image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .attribution {
+      margin-top: 430px;
+      font-size: 10px;
+    }
+
+    .attribution a {
+      font-size: 10px;
+    }
+  }
+/* Responsiveness */
+  </style>
+
+</head>
+<body>
+<!-- Main Content -->
+  <main>
+    <div class="container">
+      <div class="content">
+        <!-- Main Text -->
+        <div class="main-text">
+          <h1>Get <strong class="bold">insights</strong> that help your business grow.</h1>
+          <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
+        </div>
+        <!-- Stats -->
+        <div class="stats-text">
+          <div class="stats-companies">
+            <h2>10k+</h2>
+            <p>Companies</p>
+          </div>
+          <div class="stats-templates">
+            <h2>314</h2>
+            <p>Templates</p>
+          </div>
+          <div class="stats-queries">
+            <h2>12M+</h2>
+            <p>Queries</p>
+          </div>
+        </div>
+      </div>
+      <!-- Image-->
+      <div class="image">
+        <img src="image-header-desktop.jpg" alt="main image">
+      </div>
+    </div>
+  </main>
+
+<!-- Footer -->
+  <footer>  
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Cairo Garbelotto</a>. 
+    </div>
+  </footer>
+
+</body>
+</html>
